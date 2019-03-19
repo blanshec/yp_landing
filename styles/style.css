@@ -228,7 +228,7 @@
 
 .feinman__title {
     position: relative;
-    top: 100px;
+    /*top: 100px;*/
     width: 648px;
     height: 276px;
     text-align: center;
@@ -239,7 +239,7 @@
 }
 
 .feinman__subtitle {
-    margin-top: 70px;
+    /*margin-top: 70px;*/
 
     line-height: 51px;
     font-size: 36px;
