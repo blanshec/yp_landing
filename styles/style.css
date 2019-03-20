@@ -7,10 +7,13 @@
       полноэкранном режиме бэкграунды растягиваются по
       ней, что выглядит не очень хорошо. РАСКОМЕНТИТЬ ЕСЛИ
       возникнут проблемы*/
-    /*max-width: 1600px;*/
+    max-width: 1600px;
     /* выше установили ограничение по максимальной ширине */
     margin: 0 auto;
     /* выше для экранов больше 1600px отцентрировали весь контент */
+
+    /* Нужно исправить: нужно раскоментировать max-width: 1600px;
+       Причину, по которой бэкграунды растягивает, описал в коменте на 53 строке */
 
     font-family: 'Helvetica Neue', Arial, sans-serif;
 }
@@ -27,10 +30,15 @@
 /*HEADER*/
 .header {
     z-index: 1;
-    height: 100vh;
+    /* Нужно исправить: использование vh для высоты - не всегда хорошая идея.
+       vh - единица измерения, зависящая от размера окна браузера.
+       Для экрана с большой высотой это будет выглядеть не всегда хорошо, header растащит на всю высоту.
+       Для текущего примера достаточно указать min-height при которой страница выглядит хорошо
+       например min-height: 756px - подберите оптимальное значение (max-height в этом случае будет лишним)
+     */
     width: 100%;
-    min-height: 600px;
-    /*max-height: 756px; */
+    min-height: 756px;
+    position: relative;
     /* выше установили ограничения для секции */
 
     display: flex;
@@ -47,14 +55,18 @@
 .logo_header {
     background-image: url(../images/logo.svg);
     position: absolute;
+    /* Нужно исправить: используя position: absolute нужно так же указать у блока, относительно которого позиционируем
+        свойство position: relative - в данном случае нужно это указать для класса .header.
+        Тогда не понадобится коментировать max-width: 1600px; бэкграунды будут на нужных местах! */
     left: 64px;
     top: 30px;
 }
 
 .header__title {
     z-index: 4;
-    display: flex;
-    justify-content: center;
+    /* Нужно исправить: тут свойства display: flex и justify-content: center ни на что не влияют и являются лишними
+      (так как у header__title нет дочерних элементов)
+      Их можно убрать */
     margin-left: 64px;
 
     line-height: 96px;
@@ -124,11 +136,18 @@
 
 .two-columns__brief {
     width: 175px;
+    /* Можно лучше: normal является значением по умолчанию и явно это нужно указывать нечасто
+      этот пункт не критичен для ревью и его не обязательно исправлять.
+      Будет здорово, если Вы посмотрите на подобные значения по умолчанию */
+
+}
+
+.two-columns__brief_title {
     line-height: 1.2;
     font-size: 18px;
-    font-weight: normal;
-
     color: #2F80ED;
+    font-weight: normal;
+    margin: 0;
 }
 
 .two-columns__main-text {
@@ -140,7 +159,6 @@
     margin: 0;
     line-height: 34px;
     font-size: 24px;
-    font-weight: normal;
 }
 
 .two-columns__paragraph_accent {
@@ -180,7 +198,6 @@
 
     line-height: 34px;
     font-size: 24px;
-    font-weight: normal;
 }
 
 .table {
@@ -205,7 +222,6 @@
 .table__text {
     line-height: 1.2;
     font-size: 18px;
-    font-weight: normal;
 }
 
 /*FEINMAN*/
@@ -217,9 +233,9 @@
     background-repeat: no-repeat;
 
     position: relative;
-    margin: 100px 0 0;
 
     height: 790px;
+    padding: 100px 0 0;
 
     display: flex;
     flex-direction: column;
@@ -228,7 +244,7 @@
 
 .feinman__title {
     position: relative;
-    top: 100px;
+    margin: 0;
     width: 648px;
     height: 276px;
     text-align: center;
@@ -239,7 +255,8 @@
 }
 
 .feinman__subtitle {
-    margin-top: 70px;
+    /*margin-top: 70px;*/
+    margin: 0;
 
     line-height: 51px;
     font-size: 36px;
@@ -253,7 +270,6 @@
 
     line-height: 51px;
     font-size: 36px;
-    font-weight: normal;
 
     text-decoration: none;
     color: #000;
@@ -273,20 +289,18 @@
 
 .section-title_white {
     margin: 90px 0 0;
-
     color: #fff;
-    line-height: 69px;
-    font-size: 60px;
-    font-weight: bold;
+    /* Нужно исправить: так как используется модификатор, то общую часть можно вынести в класс .section-title,
+      чтобы избежать повторения кода, а в этом классе переопределить например только margin и color
+      в html тогда можно будет использовать class="section-title section-title_white"
+      (аналогичный комент я оставил в HTML файле)*/
 }
 
 .section-subtitle_white {
     margin: 20px 0 0;
-
     color: #ffffff;
-    line-height: 34px;
-    font-size: 24px;
-    font-weight: normal;
+    /* Нужно исправить: здесь аналогичная ситуация с модификатором - общий код можно оставить только в .section-subtitle
+      Рекомендую обратить внимание и на остальные подобные моменты */
 }
 
 .table_white {
@@ -298,6 +312,7 @@
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-between;
+    /* Можно лучше: чтобы код лучше читался и был в едином стиле - отступы лучше сделать везде одинаковые */
 }
 
 .table__cell_white {
@@ -315,7 +330,6 @@
 .table__text_white {
     line-height: 1.2;
     font-size: 18px;
-    font-weight: normal;
 }
 
 .kaufman__triangle {
@@ -355,10 +369,10 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    flex-grow:  2;
+    flex-grow: 2;
 }
 
-.logo__footer {
+.logo_footer {
     background-image: url(../images/logo_grey.svg);
 
     width: 183px;
@@ -369,13 +383,12 @@
     color: #ffffff;
     line-height: 25px;
     font-size: 18px;
-    font-weight: normal;
 
     margin: 0 0 18px;
 }
 
 .footer__column_info {
-    flex-grow:  1;
+    flex-grow: 1;
 }
 
 .footer__column-heading {
@@ -394,7 +407,6 @@
 
     line-height: 30px;
     font-size: 18px;
-    font-weight: normal;
 }
 
 .footer__column-links_link {
@@ -409,11 +421,15 @@
 
 .footer__social-links_facebook:before {
     content: url(../images/facebook_white.svg);
+    /* Отлично: очень хорошее применение псевдоэлемента before!
+       (по новой спецификации для псевдоэлементов (before, after) лучше использовать два двоеточия ::before,
+       но для поддержки старых браузеров можно оставить одно двоеточие, как у Вас сейчас) */
 }
 
 .footer__social-links_vk:before {
     content: url(../images/vk_white.svg);
 }
- .footer__social-links_instagram:before {
-     content: url(../images/instagram_white.svg);
- }
+
+.footer__social-links_instagram:before {
+    content: url(../images/instagram_white.svg);
+}
