@@ -255,8 +255,7 @@
 }
 
 .feinman__subtitle {
-    /*margin-top: 70px;*/
-    margin: 0;
+    margin: 70px 0 0;
 
     line-height: 51px;
     font-size: 36px;
@@ -404,7 +403,7 @@
     flex-direction: column;
     margin: 20px 0 16px;
 
-
+    list-style-type: none;
     line-height: 30px;
     font-size: 18px;
 }
@@ -417,6 +416,7 @@
 .footer__social-links {
     color: #ffffff;
     text-decoration: none;
+    list-style-type: none;
 }
 
 .footer__social-links_facebook:before {
