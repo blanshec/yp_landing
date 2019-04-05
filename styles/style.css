@@ -1,3 +1,12 @@
+@keyframes rotation {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
 .page {
     min-width: 1100px;
     max-width: 1600px;
@@ -30,6 +39,8 @@
     background-color: #F2F2F2;
     background-size: cover;
     background-position: center;
+
+    overflow: hidden;
 }
 
 .logo_header {
@@ -85,6 +96,9 @@
     width: 568px;
 
     background-color: #2F80ED;
+    
+    transform: rotate(-15deg);
+    animation: rotation 20s linear infinite;
 }
 
 .header__link {
