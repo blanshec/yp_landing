@@ -166,6 +166,10 @@
     align-items: center;
 }
 
+.technics .section-title {
+    line-height: 1.15;
+}
+
 .cards {
     display: flex;
 
