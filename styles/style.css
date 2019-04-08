@@ -24,6 +24,15 @@
     background-repeat: no-repeat;
 }
 
+.link-external:hover {
+    opacity: .5;
+}
+
+.link-external {
+    opacity: 1;
+    transition: opacity .30s;
+}
+
 /*HEADER*/
 .header {
     z-index: 1;
@@ -188,7 +197,9 @@
     height: 160px;
     margin: 0 40px 0 40px;
 
-    background-color: #000;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
     border-radius: 50%;
 }
 
@@ -206,10 +217,138 @@
 
 }
 
+.cards__image_attention {
+    background-image: url(/images/attention.png);
+}
+
+.cards__image_recall {
+    background-image: url(/images/recall.png);
+}
+
+.cards__image_interliving {
+    background-image: url(/images/interliving.png);
+}
+
+.cards__image_questions {
+    background-image: url(/images//question.png);
+}
+
+.cards__image_illusion {
+    background-image: url(/images/competence.png);
+}
+
+/* VIDEO */
+.video {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.video__content {
+    position: relative;
+    top: 50px;
+    margin: auto 0 0;
+    z-index: 10;
+}
+
+.video__iframe:first-of-type {
+    margin: 0 20px 0 0;
+}
+
+/* OAKLEY */
+.oakley {
+    position: relative;
+    padding: 160px 0 80px;
+
+    display: flex;
+    justify-content: center;
+
+    background-color: #F2F2F2;
+}
+
+/* KHAN */
+.khan {
+    margin: 100px 0 0;
+    padding: 105px 0 0;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+
+    background-color: #F2F2F2;
+}
+
+.khan__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+
+    width: 80%;
+}
+
+.khan__author {
+    margin: 0;
+
+    line-height: 42px;
+    font-size: 30px;
+    font-weight: normal;
+}
+
+.khan__title {
+    margin: 0;
+
+    line-height: 1.15;
+    font-size: 60px;
+}
+
+.khan__quote {
+    width: 790px;
+    margin: 50px 0 36px 0;
+
+    line-height: 34px;
+    font-size: 24px;
+}
+
+.khan__quote-author {
+    margin: 0 0 10px 0;
+
+    line-height: 1.15;
+    font-size: 24px;
+}
+
+.khan__quote-athor-subline {
+    margin: 0;
+
+    line-height: 1.15;
+    font-size: 24px;
+    font-weight: normal;
+}
+
+.khan__book-container {
+    margin: 68px 0 0;
+
+    display: flex;
+    flex-direction: row;
+    align-content: flex-start;
+}
+
+.khan__book-pic {
+    margin: 0 20px 0 0;
+}
+
+.khan__buy-link {
+    margin: 0;
+
+    color: #2F80ED;
+    
+    text-decoration: none;
+    line-height: 42px;
+    font-size: 30px;
+}
+
 /*DIGITS*/
 .digits {
     position: relative;
-    margin: 100px 0;
+    margin: 100px 0 0;
 
     display: flex;
     flex-direction: column;
@@ -218,7 +357,7 @@
 
 .section-title {
     width: 60%;
-    margin: 20px 0 0;
+    margin: 0;
 
     text-align: center;
     line-height: 69px;
@@ -229,10 +368,11 @@
 .section-subtitle {
     text-align: center;
     width: 60%;
-    margin: 0;
+    margin: 20px 0 0;
 
     line-height: 34px;
     font-size: 24px;
+    font-weight: normal;
 }
 
 .table {
@@ -270,7 +410,7 @@
     position: relative;
 
     height: 790px;
-    padding: 100px 0 0;
+
 
     display: flex;
     flex-direction: column;
@@ -324,6 +464,8 @@
 .section-title_white {
     margin: 90px 0 0;
     color: #fff;
+
+    z-index: 1;
 }
 
 .section-subtitle_white {
@@ -371,6 +513,50 @@
 
     position: absolute;
     right: -210px;
+
+    animation: rotation 20s linear infinite;
+}
+
+/* RESOURCES */
+.resources {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    margin: 100px 0 0;
+}
+
+.resources__logo-zone {
+    display: flex;
+    text-decoration: none;
+    justify-content: space-evenly;
+    margin: 80px auto 217px;
+
+    width: 1100px;
+}
+
+.resources__logo {
+    width: 270px;
+    height: 38px;
+
+    margin: 0;
+    padding: 0;
+
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+.resources__logo_arzamas {
+    background-image: url(/images/logo/arzamas.svg);
+}
+.resources__logo_np {
+    background-image: url(/images/logo/n1.svg);
+}
+.resources__logo_strelka {
+    background-image: url(/images/logo/strelka.svg);
+}
+.resources__logo_polka {
+    background-image: url(/images/logo/polka.svg); 
 }
 
 /*FOOTER*/
