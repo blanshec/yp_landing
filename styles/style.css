@@ -25,7 +25,7 @@
 }
 
 .link-external:hover {
-    opacity: .5;
+    opacity: .6;
 }
 
 .link-external {
@@ -62,7 +62,10 @@
 
 .header__title {
     z-index: 4;
-    margin-left: 64px;
+    margin: 0 0 0 64px;
+    position: absolute;
+
+    width: 400px;
 
     line-height: 96px;
     font-size: 102px;
@@ -215,26 +218,6 @@
     line-height: 23px;
     font-size: 18px;
 
-}
-
-.cards__image_attention {
-    background-image: url(/images/attention.png);
-}
-
-.cards__image_recall {
-    background-image: url(/images/recall.png);
-}
-
-.cards__image_interliving {
-    background-image: url(/images/interliving.png);
-}
-
-.cards__image_questions {
-    background-image: url(/images//question.png);
-}
-
-.cards__image_illusion {
-    background-image: url(/images/competence.png);
 }
 
 /* VIDEO */
@@ -528,7 +511,7 @@
 
 .resources__logo-zone {
     display: flex;
-    text-decoration: none;
+    list-style: none;
     justify-content: space-evenly;
     margin: 80px auto 217px;
 
@@ -538,25 +521,18 @@
 .resources__logo {
     width: 270px;
     height: 38px;
-
-    margin: 0;
-    padding: 0;
-
-    background-position: center;
-    background-size: contain;
-    background-repeat: no-repeat;
 }
 .resources__logo_arzamas {
-    background-image: url(/images/logo/arzamas.svg);
+    content: url(../images/logo/arzamas.svg);
 }
 .resources__logo_np {
-    background-image: url(/images/logo/n1.svg);
+    content: url(../images/logo/n1.svg);
 }
 .resources__logo_strelka {
-    background-image: url(/images/logo/strelka.svg);
+    content: url(../images/logo/strelka.svg);
 }
 .resources__logo_polka {
-    background-image: url(/images/logo/polka.svg); 
+    content: url(../images/logo/polka.svg);
 }
 
 /*FOOTER*/

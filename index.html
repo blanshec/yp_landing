@@ -13,24 +13,23 @@
 <body>
     <div class="page">
         <header class="header">
-            <div class="logo logo_header">
-
-            </div>
+            <a class="link-external" href="https://praktikum.yandex.ru">
+                <div class="logo logo_header"></div>
+            </a> <!-- Можно улучшить: логотип сервиса обычно делают кликабельной ссылкой (например, a или a>img) -->
             <h1 class="header__title">
-                Научиться<br />учиться
+                <!-- Нужно исправить: не нужно использовать br для переноса строк в заголовке. Подумайте в сторону ограничения ширины элемента -->
+                Научиться учиться
             </h1>
             <h2 class="header__subtitle">
                 Какие современные и эффективные подходы к обучению вы можете
                 использовать в своей жизни?
-                <a class="header__link" href="#content_start">Узнать →</a>
+                <a class="header__link" href="#content_start">Узнать &rarr;</a>
+                <!-- Можно улучшить: для копирайта и других спец символов нужно использовать html - мнемоники (https://ru.wikipedia.org/wiki/Мнемоники_в_HTML) -->
             </h2>
 
-            <div class="header__main-illustration">
-
-            </div>
-            <div class="header__square-pic">
-
-            </div>
+            <div class="header__main-illustration"></div>
+            <!-- если тег пустой, то закрывающий тег можно оставить  на той же строке, что и открывающий -->
+            <div class="header__square-pic"></div>
         </header>
         <main class="content">
             <section class="description" id="content_start">
@@ -71,8 +70,9 @@
 
                 <div class="cards">
                     <div class="cards__item">
-                        <div class="cards__image cards__image_attention">
-                        </div>
+                        <img class="cards__image" src="./images/attention.png" alt="attention">
+                        <!-- Нужно исправить: тут и далее в секции, по аналогии, лучше использовать картинку (не забудьте alt) -->
+                        </img>
                         <h4 class="cards__title">
                             Два вида внимания
                         </h4>
@@ -81,9 +81,7 @@
                         </p>
                     </div>
                     <div class="cards__item">
-                        <div class="cards__image cards__image_recall">
-
-                        </div>
+                        <img class="cards__image" src="./images/recall.png" alt="recall"></img>
                         <h4 class="cards__title">
                             Recall
                         </h4>
@@ -92,9 +90,8 @@
                         </p>
                     </div>
                     <div class="cards__item">
-                        <div class="cards__image cards__image_interliving">
-
-                        </div>
+                        <img class="cards__image cards__image_interliving" src="./images/interliving.png"
+                            alt="interliving"></img>
                         <h4 class="cards__title">
                             Интерливинг
                         </h4>
@@ -103,9 +100,8 @@
                         </p>
                     </div>
                     <div class="cards__item">
-                        <div class="cards__image cards__image_questions">
-
-                        </div>
+                        <img class="cards__image cards__image_questions" src="./images/question.png"
+                            alt="question"></img>
                         <h4 class="cards__title">
                             Вопросы
                         </h4>
@@ -114,9 +110,8 @@
                         </p>
                     </div>
                     <div class="cards__item">
-                        <div class="cards__image cards__image_illusion">
-
-                        </div>
+                        <img class="cards__image cards__image_illusion" src="./images/competence.png"
+                            alt="competence"></img>
                         <h4 class="cards__title">
                             Иллюзия компетентности
                         </h4>
@@ -173,7 +168,8 @@
                     Выучить и не забыть.
                 </h3>
                 <a class="link-external feinman__link" href="https://tinyurl.com/y2emlkhh" target="_blank">Подробнее
-                    →</a>
+                    &rarr;</a>
+                <!-- Можно улучшить: для копирайта и других спец символов нужно использовать html - мнемоники (https://ru.wikipedia.org/wiki/Мнемоники_в_HTML) -->
             </section>
 
             <section class="digits">
@@ -267,15 +263,19 @@
                         занимается образованием - так учащиеся повсюду смогут получить навыки и знания,
                         которые приносят успех в школе, карьере и жизни.
                     </p>
-                    <h4 class="khan__quote-author">
+                    <p class="khan__quote-author">
+                        <!-- Можно улучшить: тут больше подойдет p,. тк заголовок обычно что-то озаглавливает -->
                         Джордж Лукас
-                    </h4>
-                    <h5 class="khan__quote-athor-subline">
+                    </p>
+                    <p class="khan__quote-athor-subline">
+                        <!-- тут тоже -->
                         Кинорежиссер, продюсер
-                    </h5>
+                    </p>
                     <div class="khan__book-container">
-                        <img class="khan__book-pic" src="./images/book.jpg">
-                        <a class="link-external khan__buy-link" href="">Купить книгу →</a>
+                        <img class="khan__book-pic" src="./images/book.jpg" alt="Salmon Han book cover">
+                        <!-- Можно улучшить: нужно добавить alt -->
+                        <a class="link-external khan__buy-link" href="#">Купить книгу &rarr;</a>
+                        <!-- Можно улучшить: используйте мнемоники, в href нужно добавить # в качестве заглушки -->
                     </div>
                 </div>
             </section>
@@ -383,37 +383,35 @@
                 <h3 class="section-subtitle">
                     Больше материалов о техниках и лайфхаках обучения
                 </h3>
-                <li class="resources__logo-zone">
-                    <a class="link-external " href="https://arzamas.academy">
-                        <ul class="resources__logo resources__logo_arzamas">
-
-                        </ul>
-                    </a>
-                    <a class="link-external " href="https://nplus1.ru">
-                        <ul class="resources__logo resources__logo_np">
-
-                        </ul>
-                    </a>
-                    <a class="link-external " href="https://strelka.com">
-                        <ul class="resources__logo resources__logo_strelka">
-
-                        </ul>
-                    </a>
-                    <a class="link-external " href="https://polka.academy">
-                        <ul class="resources__logo resources__logo_polka">
-
-                        </ul>
-                    </a>
-                </li>
+                <!-- Нужно исправить: тут Вы хотели использовать список, это хорошо, но сделали неправильно. Правильно вот так: 
+                <ul> - это весь список
+                    <li> - это элемент списка
+                        <a .../> - ссылка - картинка с логотипом
+                    </li>
+                    ...
+                </ul>
+                -->
+                <ul class="resources__logo-zone">
+                    <li class="resources__logo"><a class="link-external resources__logo_arzamas"
+                            href="https://arzamas.academy"></a></li>
+                    <li class="resources__logo"><a class="link-external resources__logo_np"
+                            href="https://nplus1.ru"></a></li>
+                    <li class="resources__logo"><a class="link-external resources__logo_strelka"
+                            href="https://strelka.com"></a></li>
+                    <li class="resources__logo"><a class="link-external resources__logo_polka"
+                            href="https://polka.academy"></a> </li>
+                </ul>
             </section>
         </main>
         <footer class="footer">
             <div class="footer__columns">
                 <div class="footer__column_copyright">
-                    <div class="logo logo_footer">
-                    </div>
+                    <a class="link-external" href="https://praktikum.yandex.ru">
+                        <div class="logo logo_footer"></div>
+                    </a>
                     <p class="footer__author">
-                        © 2019. Алина Абдуршина
+                        &copy; 2019. Алина Абдуршина
+                        <!-- Можно улучшить: лучше использовать мнемонику для копирайта -->
                     </p>
                 </div>
                 <div class="footer__column_info">
@@ -442,3 +440,24 @@
 </body>
 
 </html>
+
+
+<!--
+
+    В целом по работе: хорошая работа, корректная семантика. В целом работа выглядит очень хорошо, но есть несколько замечаний и комментариев.
+
+    Нужно исправить: 
+        Сделайте правильный список в logo-zone
+        Исправьте ошибку с неотображением картинок (см. визуально)
+
+    Остальные комментарии в коде носят рекомендательный характер. 
+
+    Визуально: 
+        не отображаются картики в "Пять практик от Барбары Оакли" (проверено в yandex browser на MacOS)
+        не отображаются картинки в логотипах
+
+    Для получения зачета поправьте, пожалуйста, критичные ошибки. 
+
+    Пожалуйста, не удаляйте комментарии.
+
+-->
