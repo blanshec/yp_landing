@@ -1,20 +1,17 @@
+@keyframes rotation {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
 .page {
     min-width: 1100px;
-    /* мы ещё не умеем делать мобильную версию сайта, */
-    /* поэтому выше установлена минимальная ширина страницы */
-
-    /*Закоментировала максимальную ширину, так как при
-      полноэкранном режиме бэкграунды растягиваются по
-      ней, что выглядит не очень хорошо. РАСКОМЕНТИТЬ ЕСЛИ
-      возникнут проблемы*/
     max-width: 1600px;
-    /* выше установили ограничение по максимальной ширине */
     margin: 0 auto;
-    /* выше для экранов больше 1600px отцентрировали весь контент */
-
-    /* Нужно исправить: нужно раскоментировать max-width: 1600px;
-       Причину, по которой бэкграунды растягивает, описал в коменте на 53 строке */
-
     font-family: 'Helvetica Neue', Arial, sans-serif;
 }
 
@@ -27,19 +24,21 @@
     background-repeat: no-repeat;
 }
 
+.link-external:hover {
+    opacity: .6;
+}
+
+.link-external {
+    opacity: 1;
+    transition: opacity .30s;
+}
+
 /*HEADER*/
 .header {
     z-index: 1;
-    /* Нужно исправить: использование vh для высоты - не всегда хорошая идея.
-       vh - единица измерения, зависящая от размера окна браузера.
-       Для экрана с большой высотой это будет выглядеть не всегда хорошо, header растащит на всю высоту.
-       Для текущего примера достаточно указать min-height при которой страница выглядит хорошо
-       например min-height: 756px - подберите оптимальное значение (max-height в этом случае будет лишним)
-     */
     width: 100%;
     min-height: 756px;
     position: relative;
-    /* выше установили ограничения для секции */
 
     display: flex;
     flex-direction: row;
@@ -50,24 +49,23 @@
     background-color: #F2F2F2;
     background-size: cover;
     background-position: center;
+
+    overflow: hidden;
 }
 
 .logo_header {
     background-image: url(../images/logo.svg);
     position: absolute;
-    /* Нужно исправить: используя position: absolute нужно так же указать у блока, относительно которого позиционируем
-        свойство position: relative - в данном случае нужно это указать для класса .header.
-        Тогда не понадобится коментировать max-width: 1600px; бэкграунды будут на нужных местах! */
     left: 64px;
     top: 30px;
 }
 
 .header__title {
     z-index: 4;
-    /* Нужно исправить: тут свойства display: flex и justify-content: center ни на что не влияют и являются лишними
-      (так как у header__title нет дочерних элементов)
-      Их можно убрать */
-    margin-left: 64px;
+    margin: 0 0 0 64px;
+    position: absolute;
+
+    width: 400px;
 
     line-height: 96px;
     font-size: 102px;
@@ -111,6 +109,9 @@
     width: 568px;
 
     background-color: #2F80ED;
+
+    transform: rotate(-15deg);
+    animation: rotation 20s linear infinite;
 }
 
 .header__link {
@@ -136,10 +137,6 @@
 
 .two-columns__brief {
     width: 175px;
-    /* Можно лучше: normal является значением по умолчанию и явно это нужно указывать нечасто
-      этот пункт не критичен для ревью и его не обязательно исправлять.
-      Будет здорово, если Вы посмотрите на подобные значения по умолчанию */
-
 }
 
 .two-columns__brief_title {
@@ -171,8 +168,8 @@
     font-weight: bold;
 }
 
-/*DIGITS*/
-.digits {
+/*TECHNICS*/
+.technics {
     position: relative;
     margin: 100px 0;
 
@@ -181,9 +178,169 @@
     align-items: center;
 }
 
+.technics .section-title {
+    line-height: 1.15;
+}
+
+.cards {
+    display: flex;
+
+    flex-wrap: wrap;
+    max-width: 80%;
+}
+
+.cards__item {
+    width: 240px;
+    margin: 60px 0 0 100px;
+    text-align: center;
+}
+
+.cards__image {
+    width: 160px;
+    height: 160px;
+    margin: 0 40px 0 40px;
+
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    border-radius: 50%;
+}
+
+.cards__title {
+    margin: 43px 0 0;
+    line-height: 1.15;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.cards__description {
+    margin: 16px 0 0;
+    line-height: 23px;
+    font-size: 18px;
+
+}
+
+/* VIDEO */
+.video {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.video__content {
+    position: relative;
+    top: 50px;
+    margin: auto 0 0;
+    z-index: 10;
+}
+
+.video__iframe:first-of-type {
+    margin: 0 20px 0 0;
+}
+
+/* OAKLEY */
+.oakley {
+    position: relative;
+    padding: 160px 0 80px;
+
+    display: flex;
+    justify-content: center;
+
+    background-color: #F2F2F2;
+}
+
+/* KHAN */
+.khan {
+    margin: 100px 0 0;
+    padding: 105px 0 0;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+
+    background-color: #F2F2F2;
+}
+
+.khan__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+
+    width: 80%;
+}
+
+.khan__author {
+    margin: 0;
+
+    line-height: 42px;
+    font-size: 30px;
+    font-weight: normal;
+}
+
+.khan__title {
+    margin: 0;
+
+    line-height: 1.15;
+    font-size: 60px;
+}
+
+.khan__quote {
+    width: 790px;
+    margin: 50px 0 36px 0;
+
+    line-height: 34px;
+    font-size: 24px;
+}
+
+.khan__quote-author {
+    margin: 0 0 10px 0;
+
+    line-height: 1.15;
+    font-size: 24px;
+}
+
+.khan__quote-athor-subline {
+    margin: 0;
+
+    line-height: 1.15;
+    font-size: 24px;
+    font-weight: normal;
+}
+
+.khan__book-container {
+    margin: 68px 0 0;
+
+    display: flex;
+    flex-direction: row;
+    align-content: flex-start;
+}
+
+.khan__book-pic {
+    margin: 0 20px 0 0;
+}
+
+.khan__buy-link {
+    margin: 0;
+
+    color: #2F80ED;
+    
+    text-decoration: none;
+    line-height: 42px;
+    font-size: 30px;
+}
+
+/*DIGITS*/
+.digits {
+    position: relative;
+    margin: 100px 0 0;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .section-title {
     width: 60%;
-    margin: 20px 0 0;
+    margin: 0;
 
     text-align: center;
     line-height: 69px;
@@ -194,10 +351,11 @@
 .section-subtitle {
     text-align: center;
     width: 60%;
-    margin: 0;
+    margin: 20px 0 0;
 
     line-height: 34px;
     font-size: 24px;
+    font-weight: normal;
 }
 
 .table {
@@ -235,7 +393,7 @@
     position: relative;
 
     height: 790px;
-    padding: 100px 0 0;
+
 
     display: flex;
     flex-direction: column;
@@ -289,17 +447,13 @@
 .section-title_white {
     margin: 90px 0 0;
     color: #fff;
-    /* Нужно исправить: так как используется модификатор, то общую часть можно вынести в класс .section-title,
-      чтобы избежать повторения кода, а в этом классе переопределить например только margin и color
-      в html тогда можно будет использовать class="section-title section-title_white"
-      (аналогичный комент я оставил в HTML файле)*/
+
+    z-index: 1;
 }
 
 .section-subtitle_white {
     margin: 20px 0 0;
     color: #ffffff;
-    /* Нужно исправить: здесь аналогичная ситуация с модификатором - общий код можно оставить только в .section-subtitle
-      Рекомендую обратить внимание и на остальные подобные моменты */
 }
 
 .table_white {
@@ -311,7 +465,6 @@
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-between;
-    /* Можно лучше: чтобы код лучше читался и был в едином стиле - отступы лучше сделать везде одинаковые */
 }
 
 .table__cell_white {
@@ -343,6 +496,43 @@
 
     position: absolute;
     right: -210px;
+
+    animation: rotation 20s linear infinite;
+}
+
+/* RESOURCES */
+.resources {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    margin: 100px 0 0;
+}
+
+.resources__logo-zone {
+    display: flex;
+    list-style: none;
+    justify-content: space-evenly;
+    margin: 80px auto 217px;
+
+    width: 1100px;
+}
+
+.resources__logo {
+    width: 270px;
+    height: 38px;
+}
+.resources__logo_arzamas {
+    content: url(../images/logo/arzamas.svg);
+}
+.resources__logo_np {
+    content: url(../images/logo/n1.svg);
+}
+.resources__logo_strelka {
+    content: url(../images/logo/strelka.svg);
+}
+.resources__logo_polka {
+    content: url(../images/logo/polka.svg);
 }
 
 /*FOOTER*/
@@ -421,9 +611,6 @@
 
 .footer__social-links_facebook:before {
     content: url(../images/facebook_white.svg);
-    /* Отлично: очень хорошее применение псевдоэлемента before!
-       (по новой спецификации для псевдоэлементов (before, after) лучше использовать два двоеточия ::before,
-       но для поддержки старых браузеров можно оставить одно двоеточие, как у Вас сейчас) */
 }
 
 .footer__social-links_vk:before {
